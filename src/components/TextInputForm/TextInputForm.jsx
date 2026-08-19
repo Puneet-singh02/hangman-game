@@ -11,12 +11,13 @@ function TextInputForm({inputType, handleFormSubmit,handleTextInputChange,handle
                 type={inputType}
                 label="Enter a Text Here"
                 placeholder="Enter Your Text"
-                onChange={handleTextInputChange}/>
+                onChangeHandler={handleTextInputChange}/>
              </div>
              <div>
                 <Button
                 text={inputType == "password" ? "Show" : "Hide"}
                 styleType="warning"
+                type="button"
                 onClickHandler={handleShowHideClick}/>
              </div>
              <div>
