@@ -4,13 +4,17 @@ import StartGame from './pages/StartGame'
 import TextInput from './components/TextInput/TextInput'
 import TextInputForm from './components/TextInputForm/TextInputForm'
 import TextInputFormContainer from './components/TextInputForm/TextInputFormContainer'
+import {Routes,Route} from 'react-router-dom'
+import PlayGame from './pages/PlayGame'
 
 function App() {
   return (
-    <>
-      <TextInputFormContainer />
-    </>
+    <Routes>
+        <Route path='/start' element={<StartGame />} />
+        <Route path='/play' element={<PlayGame />} />
+        <Route path='/' element={<div>Home Page</div>} />
+    </Routes>
   )
 }
 
-export default App
+export default App;
