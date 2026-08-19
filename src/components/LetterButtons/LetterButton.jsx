@@ -13,10 +13,17 @@ function LetterButtons({ text, guessedLetters, onLetterClick }) {
         }
     };
 
-    function handleLetterClick(event) {
-        const characterOfTheLetter = event.target.value;
-        onLetterClick?.(characterOfTheLetter);
+   function handleLetterClick(event) {
+
+        console.log("CLICKED!");
+
+        const letter = event.currentTarget.value;
+
+        console.log("LETTER:", letter);
+
+        onLetterClick?.(letter);
     }
+
 
     const buttons = Alphabets.split('').map(letter => {
         return (
