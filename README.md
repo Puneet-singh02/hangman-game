@@ -1,16 +1,99 @@
-# React + Vite
+# Hangman Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple Hangman game built with **React**. The project was created to practice React fundamentals, component-based development, state management, and React Router.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* Start a new game
+* Enter/select a word to play
+* Display the hidden word with masked letters
+* Guess letters using alphabet buttons
+* Reveal correctly guessed letters
+* Track guessed letters
+* Navigate between game screens using React Router
+* Restart the game
 
-## React Compiler
+## Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* React
+* JavaScript
+* React Router
+* Tailwind CSS
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```text
+src/
+├── components/
+│   ├── LetterButtons/
+│   └── MaskedComponent/
+│
+├── pages/
+│   ├── StartGame/
+│   └── PlayGame/
+│
+├── App.jsx
+└── main.jsx
+```
+
+## Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone <your-repository-url>
+```
+
+### 2. Navigate to the project
+
+```bash
+cd <project-folder>
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Start the development server
+
+```bash
+npm run dev
+```
+
+The application will then be available at the local development URL shown in your terminal.
+
+## What I Practiced
+
+This project helped me practice:
+
+* React components
+* `useState`
+* Event handling
+* Props
+* Conditional rendering
+* Rendering lists with `.map()`
+* Using `key` in React lists
+* JavaScript `Set`
+* `split()` and `join()`
+* React Router
+* `useNavigate`
+* `useParams`
+* `useLocation`
+* Passing state between routes
+* Organizing a React project into reusable components
+
+## Future Improvements
+
+* Add lives/attempt counter
+* Add win and lose conditions
+* Add different difficulty levels
+* Add a score system
+* Add animations
+* Add a larger word database
+* Improve responsive design
+
+## Author
+
+Puneet
