@@ -2,19 +2,27 @@
     import { useState } from "react";
     import MaskedText from "../components/MaskedComponent/MaskedText";
     import LetterButtons from "../components/LetterButtons/LetterButton";
+    import Hangman from "../components/Hangman/Hangman";
     function PlayGame(){
         // const [searchParams]=useSearchParams();
         // const{text}=useParams();
         const {state}=useLocation();
         const[guessedLetters,setGuessedLetters]=useState([]);
+        const [step,setStep]=useState(0);
+
         function handleLetterClick(letter){
+            if(state.wordSelected.toUpperCase().includes(letter)){
+                console.log("Correct");
+            }else{
+                setStep(step+1);
+            };
             setGuessedLetters([...guessedLetters,letter])
         }
     
         
         return (
             <>
-                <h1>Play Game {state.wordSelected}</h1>
+                <h1>Play Game</h1>
                 {/* {console.log(searchParams.get("text"))} */} 
                 
                 <MaskedText text={state.wordSelected} guessedLetters={guessedLetters} />
@@ -24,6 +32,9 @@
                 guessedLetters={guessedLetters}
                 onLetterClick={handleLetterClick}
                 />
+                <div>
+                    <Hangman step={step}/>
+                </div>
                 </div>
             </>
         )
