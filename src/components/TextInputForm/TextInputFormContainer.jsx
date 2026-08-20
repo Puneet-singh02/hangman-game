@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import TextInputForm from "./TextInputForm";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 function TextInputFormContainer(){
 
     const [inputType,setInputType]=useState("password");
@@ -25,7 +25,7 @@ function TextInputFormContainer(){
         console.log(event.target.value);
     }
     function handleShowHideClick(){
-        console.log("Show Hide Click Button");
+        
         if(inputType=="password"){
             setInputType("text")
         }else(
@@ -33,13 +33,48 @@ function TextInputFormContainer(){
         )
     }
 
+    function Temp(){
+        useEffect(() => {
+            console.log("Component first load");
+
+        return () => {
+            console.log("Component Unmounted");
+    };
+}, []);
+        return (
+            <div>
+                Temp
+            </div>
+        )
+    }
+
+    // // Empty Dependency Array [] => callback will be executed only at the time of loading of component
+    // useEffect(()=>{
+    //     console.log("Component Loads")
+    // },[])
+
+    //  // No Dependency Array [] => callback will be executed at the time of loading of component and at the time of every updation of useState variables i.e const[value,setValue]=useState();
+    // useEffect(()=>{
+    //     console.log("Componenet Loaded and updated every time")
+    // })
+
+    //  // Empty Dependency Array [] => callback will be executed  at the time of loading of component and when the value will be updated 
+    // useEffect(()=>{
+    //     console.log("Component loaded and updated when value updates")
+    // },[value])
+
     return (
+        <>
         <TextInputForm
         inputType={inputType}
         handleFormSubmit={handleFormSubmit}
         handleTextInputChange={handleTextInputChange}
         handleShowHideClick={handleShowHideClick}
+       
         />
+    {(inputType === "password" )? <Temp /> : null}
+        </>
+       
     )
 }
 export default TextInputFormContainer;

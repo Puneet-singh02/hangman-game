@@ -6,14 +6,14 @@ import TextInputForm from './components/TextInputForm/TextInputForm'
 import TextInputFormContainer from './components/TextInputForm/TextInputFormContainer'
 import {Routes,Route} from 'react-router-dom'
 import PlayGame from './pages/PlayGame'
-
+import Home from './pages/Home'
 function App() {
   return (
     <Routes>
         <Route path='/start' element={<StartGame />} />
         {/* <Route path='/play/:text' element={<PlayGame />} /> */}
         <Route path='/play' element={<PlayGame />} />
-        <Route path='/' element={<StartGame />} />
+        <Route path='/' element={<Home />} />
     </Routes>
   )
 }
